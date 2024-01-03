@@ -30,7 +30,7 @@ class NetworkManager:
 
             with open(self.network_manager_config, "w") as f:
                 f.write(config_content)
-            self.logger.log("修改 NetworkManager 配置文件完成")
+            self.logger.log(f"修改 NetworkManager 配置文件 ({self.network_manager_config}) 方法完成")
             return True
         except Exception as e:
             print(f"ERROR - 重启 NetworkManager 服务失败：{e}")
@@ -81,7 +81,7 @@ class NetworkManager:
                 file.write("  version: 2\n")
                 file.write("  renderer: NetworkManager\n")
             
-            self.logger.log(f"修改 Netplan 配置文件方法完成")
+            self.logger.log(f"修改 Netplan 配置文件 ({self.netplan_file}) 方法完成")
             return True
         except Exception as e:
             self.logger.log(f"ERROR - 修改 Netplan 配置失败：{e}")
