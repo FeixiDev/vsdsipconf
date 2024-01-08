@@ -5,12 +5,12 @@ from log_record import Logger
 from control import Control, display_version
 
 def main():
-    parser = argparse.ArgumentParser(description='csmpreinstaller')
+    parser = argparse.ArgumentParser(description='vsdscsipconf')
     parser.add_argument('-v', '--version', action='store_true',
                         help='show version information')
     args = parser.parse_args()
 
-    logger = Logger("vsdscsminspect")
+    logger = Logger("vsdscsipconf")
 
     if args.version:
         display_version()
