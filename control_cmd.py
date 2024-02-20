@@ -147,8 +147,9 @@ class Package:
         software_name = "network-manager"
         
         if "No such file" in result.stdout or "not found" in result.stdout or "Warning" in result.stdout:
-            self.logger.log(f"{software_name} 未安装")
-            print(f"{software_name} 未安装")
+            self.logger.log(f"安装 nmcli 失败")
+            print(f"安装 nmcli 失败")
+            sys.exit()
         elif version != None:
             print(f"安装 nmcli 成功")
             print(f"{software_name} 版本检查完成: {version}\n")
