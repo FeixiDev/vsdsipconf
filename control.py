@@ -12,7 +12,7 @@ def Singleton(cls):
     return _singleton_wrapper
 
 def display_version():
-    print("version: v1.0.0")
+    print("version: v1.0.1")
 
 @Singleton
 class Control:
