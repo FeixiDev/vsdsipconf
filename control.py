@@ -41,9 +41,10 @@ class Control:
 
         print("done")
     
-    # 重启 network_manager
+    # 最后进行一次重启 network_manager
     def restart_network_manager(self):
-        self.package.restart_network_manager_()
+        if not self.network_manager.restart_network_manager_service():
+            print(f"重启NetworkManager服务失败")
 
     def all_control(self):
         self.nmcli_()
