@@ -163,14 +163,3 @@ class Package:
         # print(f"{software_name} version: {version}")
         self.version_remain('nmcli', version)
 
-    def restart_network_manager_(self):
-        command = "systemctl restart NetworkManager"
-        result = self.base.com(command)
-        self.logger.log(f"执行 {command} 的结果: {result.stdout}")
-
-        if result.returncode != 0:
-            self.logger.log("重启 network-manager 失败")
-            print("重启 network-manager 失败")
-            sys.exit()
-
-        self.logger.log("重启 network-manager 成功")
