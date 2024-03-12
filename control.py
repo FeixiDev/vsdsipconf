@@ -12,7 +12,7 @@ def Singleton(cls):
     return _singleton_wrapper
 
 def display_version():
-    print("version: v1.0.1")
+    print("version: v1.0.2")
 
 @Singleton
 class Control:
@@ -40,7 +40,12 @@ class Control:
             print("配置网络管理成功")
 
         print("done")
+    
+    # 重启 network_manager
+    def restart_network_manager(self):
+        self.package.restart_network_manager_()
 
     def all_control(self):
         self.nmcli_()
         self.setup_network_manager()
+        self.restart_network_manager()
