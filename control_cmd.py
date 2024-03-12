@@ -162,3 +162,4 @@ class Package:
         version = self.nmcli_versions
         # print(f"{software_name} version: {version}")
         self.version_remain('nmcli', version)
+
